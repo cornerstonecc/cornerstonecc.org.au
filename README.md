@@ -1,21 +1,64 @@
 # Documentation for cornerstonecc.org.au
 
-This repository hosts the website code used for cornerstonecc.org.au,
-including a lightly modified child theme based off Wordpress' official
-[TwentyTwenty] theme ([source code][2020-src]).
+This repository contains the website code used for
+[cornerstonecc.org.au][ccc-website], and includes a lightly modified child
+theme based off Wordpress' official [TwentyTwenty] theme
+([source code][2020-src]).
 
+[ccc-website]: https://www.cornerstonecc.org.au/
 [TwentyTwenty]: https://wordpress.com/theme/twentytwenty
 [2020-src]: https://core.trac.wordpress.org/browser/trunk/src/wp-content/themes/twentytwenty?rev=
 
-## Theme deployment
+## Quickstart
 
-**Theme updates are automatically applied via commits to the master branch of
-this repository.**
+To [deploy to production](#production-theme-deployment): commit your code
+within the `./deploy/` folder and push to the main branch 🎉
+
+To [test your theme/plugin locally](#development-local-testing): create the
+necessary secrets in `./secrets/` and run `docker-compose up` from the root
+directory 🎉
+
+```
+.
+├── .github
+│   └── workflows         # CI/CD SCRIPTS
+│       └── deploy.yml
+├── deploy                # PRODUCTION CODE:
+│   └── wp-content        #   Everything within develop/ gets uploaded to 
+│       ├── mu-plugins    #   sftp://sftp.wp.com/htdocs/ on each commit to
+│       ├── plugins       #   the main branch (via GitHub Actions).
+│       ├── themes
+│       │   └── twentytwenty-child
+│       │       └── ...
+│       └── ...
+├── .gitignore
+├── docker-compose.yaml   # Local testing. See "Development: local testing" below.
+└── README.md             # Main project documentation (this file)
+```
+
+--------
+
+## Production: theme deployment
+
+**Theme updates are automatically deployed when commits are pushed to the
+master branch of this repository.**
 
 Commits to the main branch will trigger a _GitHub Action_ that will upload the
 source files to Wordpress.com. Specifically, the contents of the local
 `deploy/` folder will get uploaded to the remote `htdocs/` folder within
 Cornerstone's Wordpress.com account.
+
+Wordpress SFTP credentials can be found in the
+[Cornerstone Wordpress admin][sftp-creds]. _Note: passwords can't be read, only
+reset._ These secrets are saved in the GitHub admin (not the repository) so
+they can be made available to the deployment process.
+
+If you need to reset the SFTP password in Wordpress, don't forget to update
+them in GitHub at "cornerstonecc.org.au repository > Settings > Secrets"
+([direct link][gh-secrets]).
+
+[sftp-creds]: https://wordpress.com/hosting-config/cornerstonegungahlin.wpcomstaging.com
+[gh-secrets]: https://github.com/cornerstonecc/cornerstonecc.org.au/settings/secrets/actions
 
 More information about the SFTP Github Action and its various settings can be
 found [here][sftp-gh-action].
@@ -26,6 +69,25 @@ Wordpress.com documentation on deploying via GitHub Actions can be found
 [sftp-gh-action]: https://github.com/Automattic/FTP-Deploy-Action/blob/3.0.1/README.md#settings
 [wp-gh-action]: https://wordpress.com/support/deploy-from-github-workflow/
 
+
+## Development: local testing
+
+Themes and plugins can be tested locally via the included `docker-compose.yaml`
+file.
+
+1. Ensure you have Docker running
+2. Create the necessary [secrets][dc-secrets] files. Currently, you need the
+   following for database initialisation (can be whatever you like):
+    - `./secrets/db_password.txt`
+    - `./secrets/db_root_password.txt`
+3. From the root directory run `docker-compose up` and view your theme at
+   [http://localhost:8000/]()
+
+_[Documentation for `docker-compose`](https://docs.docker.com/compose/reference/overview/)._ 
+
+[dc-secrets]: https://docs.docker.com/compose/compose-file/#secrets
+
+--------
 
 ## Custom integrations
 
