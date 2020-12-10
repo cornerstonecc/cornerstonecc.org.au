@@ -11,6 +11,11 @@ theme based off Wordpress' official [TwentyTwenty] theme
 
 ## Quickstart
 
+1. Create a feature branch off main
+2. Make changes within `./deploy/wp-content/`
+3. Test locally
+4. Merge into main to deploy to production
+
 To [deploy to production](#production-theme-deployment): commit your code
 within the `./deploy/` folder and push to the main branch 🎉
 
