@@ -1,7 +1,11 @@
-on: push
-name: Publish Website
+name: Deploy to Wordpress.com
+on:
+  push:
+    branches:
+    - main
+
 jobs:
-  FTP-Deploy-Action:
+  Upload-deploy-folder-to-Wordpress:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
