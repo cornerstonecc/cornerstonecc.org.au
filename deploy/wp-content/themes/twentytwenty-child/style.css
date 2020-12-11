@@ -8,3 +8,60 @@
  Version:      2020-09
  Text Domain:  twentyfifteenchild
 */
+
+.hp-buttons {
+    /*background: rgba(250, 0, 0, 0.1);*/
+    margin-top: 20vh;
+    padding-bottom: 10vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Specificity overrides :/ */
+.singular:not(.overlay-header) .entry-header .hp-buttons__button:link,
+.singular:not(.overlay-header) .entry-header .hp-buttons__button:visited,
+.singular:not(.overlay-header) .entry-header .hp-buttons__button:hover,
+.singular:not(.overlay-header) .entry-header .hp-buttons__button:active {
+    /*background: rgba(0, 0, 255, 0.1);*/
+    padding: 0.25rem;
+    width: 15rem;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+
+.hp-buttons__icon {
+    display: block;
+    width: 100%;
+    margin: 0 auto 1rem;
+    font-size: 4rem;
+    height: 4rem;
+}
+
+.to-the-content-wrapper {
+    top: calc(100% - 1.5rem);
+}
+
+@media (min-width: 700px) {
+    .to-the-content-wrapper {
+        top: calc(100% + 0rem);  /* Was: + 1.8rem */
+    }
+}
+
+a.to-the-content {
+    flex-wrap: wrap;
+}
+
+a.to-the-content::before {
+    content: "Swipe up";
+    color: white;
+    opacity: 0.65;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    padding-bottom: 1rem;
+}
