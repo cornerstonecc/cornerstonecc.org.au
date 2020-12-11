@@ -1,0 +1,26 @@
+{
+  "name": "twentytwenty-child",
+  "version": "1.0.0",
+  "description": "Custom JS for Cornerstone CC's Wordpress theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "wp-scripts start --config webpack.config.js",
+    "build": "wp-scripts build --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cornerstonecc/cornerstonecc.org.au.git"
+  },
+  "author": "Malalta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cornerstonecc/cornerstonecc.org.au/issues"
+  },
+  "homepage": "https://github.com/cornerstonecc/cornerstonecc.org.au#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^12.5.0",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2"
+  }
+}
