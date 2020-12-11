@@ -9,30 +9,43 @@
  Text Domain:  twentyfifteenchild
 */
 
-.hp-buttons {
-    /*background: rgba(250, 0, 0, 0.1);*/
+/* HOMEPAGE QUICK LINKS .page-template-template-homepage
+   ====================
+*/
+.page-template-template-homepage .entry-header .entry-title {
+    text-shadow: 0 0 20px black;
+}
+
+.page-template-template-homepage .entry-header .hp-buttons {
     margin-top: 20vh;
     padding-bottom: 10vh;
     display: flex;
     justify-content: space-around;
 }
 
-/* Specificity overrides :/ */
-.singular:not(.overlay-header) .entry-header .hp-buttons__button:link,
-.singular:not(.overlay-header) .entry-header .hp-buttons__button:visited,
-.singular:not(.overlay-header) .entry-header .hp-buttons__button:hover,
-.singular:not(.overlay-header) .entry-header .hp-buttons__button:active {
-    /*background: rgba(0, 0, 255, 0.1);*/
-    padding: 0.25rem;
+.page-template-template-homepage .entry-header .hp-buttons__button:link,
+.page-template-template-homepage .entry-header .hp-buttons__button:visited,
+.page-template-template-homepage .entry-header .hp-buttons__button:hover,
+.page-template-template-homepage .entry-header .hp-buttons__button:active {
     width: 15rem;
     font-size: 2rem;
+    line-height: 2.5rem;
     font-weight: 900;
     text-transform: uppercase;
     text-decoration: none;
     color: white;
 }
+@media (min-width: 700px) {
+    .page-template-template-homepage .entry-header .hp-buttons__button:link,
+    .page-template-template-homepage .entry-header .hp-buttons__button:visited,
+    .page-template-template-homepage .entry-header .hp-buttons__button:hover,
+    .page-template-template-homepage .entry-header .hp-buttons__button:active {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+}
 
-.hp-buttons__icon {
+.page-template-template-homepage .entry-header .hp-buttons__icon {
     display: block;
     width: 100%;
     margin: 0 auto 1rem;
@@ -40,21 +53,20 @@
     height: 4rem;
 }
 
-.to-the-content-wrapper {
+.page-template-template-homepage .to-the-content-wrapper {
     top: calc(100% - 1.5rem);
 }
-
 @media (min-width: 700px) {
-    .to-the-content-wrapper {
+    .page-template-template-homepage .to-the-content-wrapper {
         top: calc(100% + 0rem);  /* Was: + 1.8rem */
     }
 }
 
-a.to-the-content {
+.page-template-template-homepage a.to-the-content {
     flex-wrap: wrap;
 }
 
-a.to-the-content::before {
+.page-template-template-homepage a.to-the-content::before {
     content: "Swipe up";
     color: white;
     opacity: 0.65;
