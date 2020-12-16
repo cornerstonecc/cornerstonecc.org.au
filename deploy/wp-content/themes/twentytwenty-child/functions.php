@@ -29,19 +29,3 @@ function add_custom_body_class( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'add_custom_body_class' );
-
-
-/*  Add homepage text option to Customizer
-
-*/
-// function create_homepage_customizer_options( $wp_customize ) {
-//     $wp_customize->add_section( 'custom_css', array(
-//         'title' => __( 'Custom CSS!' ),
-//         'description' => __( 'Add custom CSS here' ),
-//         'panel' => '', // Not typically needed.
-//         'priority' => 160,
-//         'capability' => 'edit_theme_options',
-//         'theme_supports' => '', // Rarely needed.
-//     ) );
-// }
-// add_action( 'customize_register', 'create_homepage_customizer_options');

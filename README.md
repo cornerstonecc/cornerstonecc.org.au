@@ -92,6 +92,20 @@ _[Documentation for `docker-compose`](https://docs.docker.com/compose/reference/
 
 [dc-secrets]: https://docs.docker.com/compose/compose-file/#secrets
 
+
+## Note: Typescript transpilation and CI/CD
+
+Currently, **Typescript _is not_ transpiled as part of the CI/CD process.**
+
+There is an assumption that other developers will be contributing to this
+repository in the future, and that they may use different tooling. The
+decision not to automate Typescript/JS transpilation is particularly important
+when future developers may want to extend current JS implementations.
+
+Instead, **JS must be transpiled locally.** It will then be deployed normally
+via committing code to the main branch.
+
+
 --------
 
 ## Custom integrations
