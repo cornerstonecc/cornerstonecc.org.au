@@ -9,8 +9,45 @@
  Text Domain:  twentyfifteenchild
 */
 
+/* ================================
+   CSS VARIABLES
+   ================================ */
+
+:root {
+	--spacer: 1.5rem;
+}
+
+
+/* ================================
+   HOMEPAGE
+   ================================ */
+
+/* Homepage header
+   --------------- */
+.home .cover-header .entry-title {
+    text-shadow: 0 0 20px black;
+}
+
+.home .cover-header .entry-title::after {
+	content: "Cornerstone Christian Church, Gungahlin";
+	display: block;
+	font-size: 1.5rem;
+	letter-spacing: initial;
+	text-transform: uppercase;
+	margin-top: 1.5rem;
+	text-shadow: 0 0 10px black;
+}
+@media (min-width: 700px) {
+	.home .cover-header .entry-title::after {
+		font-size: 1.75rem;
+		margin-top: 1rem;
+	}
+}
+
+
+/* Quick links .page-template-template-homepage
+   ----------- */
 .hp-buttons {
-    /*background: rgba(250, 0, 0, 0.1);*/
     margin-top: 20vh;
     padding-bottom: 10vh;
     display: flex;
