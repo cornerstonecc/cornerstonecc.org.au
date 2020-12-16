@@ -47,7 +47,7 @@
 
 /* Quick links .page-template-template-homepage
    ----------- */
-.hp-buttons {
+.home .hp-buttons {
     margin-top: 20vh;
     padding-bottom: 10vh;
     display: flex;
@@ -55,10 +55,10 @@
 }
 
 /* Specificity overrides :/ */
-.singular:not(.overlay-header) .entry-header .hp-buttons__button:link,
-.singular:not(.overlay-header) .entry-header .hp-buttons__button:visited,
-.singular:not(.overlay-header) .entry-header .hp-buttons__button:hover,
-.singular:not(.overlay-header) .entry-header .hp-buttons__button:active {
+.home.singular:not(.overlay-header) .entry-header .hp-buttons__button:link,
+.home.singular:not(.overlay-header) .entry-header .hp-buttons__button:visited,
+.home.singular:not(.overlay-header) .entry-header .hp-buttons__button:hover,
+.home.singular:not(.overlay-header) .entry-header .hp-buttons__button:active {
     /*background: rgba(0, 0, 255, 0.1);*/
     padding: 0.25rem;
     width: 15rem;
@@ -69,7 +69,7 @@
     color: white;
 }
 
-.hp-buttons__icon {
+.home .hp-buttons__icon.dashicons {
     display: block;
     width: 100%;
     margin: 0 auto 1rem;
@@ -77,21 +77,20 @@
     height: 4rem;
 }
 
-.to-the-content-wrapper {
+.home .to-the-content-wrapper {
     top: calc(100% - 1.5rem);
 }
-
 @media (min-width: 700px) {
-    .to-the-content-wrapper {
+    .home .to-the-content-wrapper {
         top: calc(100% + 0rem);  /* Was: + 1.8rem */
     }
 }
 
-a.to-the-content {
+.home a.to-the-content {
     flex-wrap: wrap;
 }
 
-a.to-the-content::before {
+.home a.to-the-content::before {
     content: "Swipe up";
     color: white;
     opacity: 0.65;
