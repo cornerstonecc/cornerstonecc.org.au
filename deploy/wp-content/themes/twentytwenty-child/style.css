@@ -102,3 +102,43 @@ a.to-the-content::before {
     letter-spacing: 3px;
     padding-bottom: 1rem;
 }
+
+
+/* ================================
+   FOOTER
+   ================================ */
+
+.footer-top.has-social-menu {
+	display: none;
+}
+
+.footer-widgets [itemtype="http://schema.org/LocalBusiness"] div {
+	margin-bottom: 2rem;
+}
+
+
+/* ================================
+   GENERAL LAYOUT
+   ================================ */
+
+/* Sub headings on 2-col content pages (eg. Privacy policy) */
+
+.wp-block-jetpack-layout-grid-column h2:first-child,
+.wp-block-jetpack-layout-grid-column h3:first-child,
+.wp-block-jetpack-layout-grid-column h4:first-child,
+.wp-block-jetpack-layout-grid-column h5:first-child,
+.wp-block-jetpack-layout-grid-column h6:first-child {
+	margin-top: 0;
+}
+
+
+/* ================================
+   PLUGINS
+   ================================ */
+
+/* Fonts: Custom Facebook Feed, and YouTube embed use non-standard HTML that
+   doesn't inherit body font styles set in the theme */
+.wf-active .epyt-gallery,
+.wf-active .cff-wrapper {
+	font-family: "Lato", sans-serif;
+}
