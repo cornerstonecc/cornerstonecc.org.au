@@ -9,6 +9,15 @@ function twentytwenty_styles() {
 add_action( 'wp_enqueue_scripts', 'twentytwenty_styles');
 
 
+/**
+ * Include Dashicons for non-logged in users
+ */
+function load_dashicons(){
+    wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'load_dashicons');
+
+
 /*  Add custom transpiled JS found in the ./build/ folder
 */
 function add_transpiled_js() {
