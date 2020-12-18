@@ -1,3 +1,3 @@
-import consoleTest from "./test";
+import updateCSSVarFromSiteHeader from "./utils/update-css-var-from-site-header";
 
-// document.addEventListener("DOMContentLoaded", consoleTest)
+updateCSSVarFromSiteHeader();

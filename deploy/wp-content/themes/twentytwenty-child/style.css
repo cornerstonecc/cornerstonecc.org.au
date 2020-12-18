@@ -15,6 +15,7 @@
 
 :root {
 	--spacer: 1.5rem;
+    --site-header-height: 0px;  /* Sensible default. Overridden on page load */
 }
 
 
@@ -24,6 +25,15 @@
 
 /* Homepage header
    --------------- */
+.home #site-header {
+    background: rgba(0,0,0,0.9);
+
+    /* Pull content below #site-header up by an amount equal to it's height.
+       JS function (on window `load` and `resize` events) calculates height.
+     */
+    margin-bottom: calc(var(--site-header-height) * -1);
+}
+
 .home .cover-header .entry-title {
     text-shadow: 0 0 20px black;
 }
