@@ -127,6 +127,11 @@
     }
 }
 
+/* Underline widget title for better visual separation */
+.widget .widget-title {
+    border-bottom: 1px solid currentColor;
+}
+
 /* Increase vertical separation between "Contact details" items */
 .footer-widgets [itemtype="http://schema.org/LocalBusiness"] div {
 	margin-bottom: 2rem;
