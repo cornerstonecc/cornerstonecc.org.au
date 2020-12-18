@@ -175,6 +175,10 @@
 	margin-bottom: 2rem;
 }
 
+/* Make social icon colours more robust */
+.footer-widgets .jetpack_widget_social_icons svg {
+    fill: var(--wp--preset--color--accent);
+}
 
 /* ================================
    GENERAL LAYOUT
