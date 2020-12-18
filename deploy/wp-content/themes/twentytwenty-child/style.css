@@ -100,6 +100,18 @@
     flex-wrap: wrap;
 }
 
+
+/* "Scroll down" / "Swipe up" language and arrows
+   ---------------------------------------------- */
+
+/* Mobile */
+.home a.to-the-content svg {
+    transform: rotate(180deg);  /* Align arrow direction with wording */
+}
+.home a.to-the-content:focus svg,
+.home a.to-the-content:hover svg {
+    transform: translateY(-20%) rotate(180deg);  /* Align arrow direction with wording */
+}
 .home a.to-the-content::before {
     content: "Swipe up";
     color: white;
@@ -110,6 +122,22 @@
     font-size: 1.4rem;
     letter-spacing: 3px;
     padding-bottom: 1rem;
+}
+
+/* Desktop overrides */
+@media (min-width: 700px) {
+    .home a.to-the-content::before {
+        content: "Scroll down";  /* Use more appropriate lang on desktop */
+    }
+
+    .home a.to-the-content svg {
+        transform: rotate(0deg);  /* Align arrow direction with wording */
+    }
+
+    .home a.to-the-content:focus svg,
+    .home a.to-the-content:hover svg {
+        transform: translateY(20%) rotate(0deg);
+    }
 }
 
 
