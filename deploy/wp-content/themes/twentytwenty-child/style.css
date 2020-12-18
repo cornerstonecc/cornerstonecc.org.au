@@ -107,10 +107,27 @@
    FOOTER
    ================================ */
 
+/* Remove social icons.
+
+   The logic to display these are tied to the main hamburger menu. We want
+   them in the main menu, but not in the footer since we're giving them their
+   own section there via the "Social Icons Widget".
+*/
 .footer-top.has-social-menu {
 	display: none;
 }
 
+/* Increase vertical separation between footer widget blocks */
+.footer-widgets .widget {
+    margin-top: 5rem;
+}
+@media (min-width: 700px) {
+    .footer-widgets .widget {
+        margin-top: 10rem;
+    }
+}
+
+/* Increase vertical separation between "Contact details" items */
 .footer-widgets [itemtype="http://schema.org/LocalBusiness"] div {
 	margin-bottom: 2rem;
 }
@@ -121,7 +138,6 @@
    ================================ */
 
 /* Sub headings on 2-col content pages (eg. Privacy policy) */
-
 .wp-block-jetpack-layout-grid-column h2:first-child,
 .wp-block-jetpack-layout-grid-column h3:first-child,
 .wp-block-jetpack-layout-grid-column h4:first-child,
