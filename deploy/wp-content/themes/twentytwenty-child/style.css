@@ -215,7 +215,11 @@ html {
 
 /* Google Calendar embeds: https://cornerstonecc.org.au/calendar/
    Embed twice - a month view and an agenda view. Make responsive by showing
-   one or the other depending on viewport width. */
+   one or the other based on viewport width. */
+
+.wp-block-jetpack-google-calendar {
+    min-width: auto !important;  /* Override WP styles */
+}
 
 /* Mobile (default) */
 .google-calendar-wrapper__agenda-view {
