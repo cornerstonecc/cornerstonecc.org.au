@@ -202,7 +202,7 @@ html {
 
 
 /* ================================
-   PLUGINS
+   PLUGINS, WIDGETS, etc.
    ================================ */
 
 /* Fonts: Custom Facebook Feed, and YouTube embed use non-standard HTML that
@@ -210,4 +210,27 @@ html {
 .wf-active .epyt-gallery,
 .wf-active .cff-wrapper {
 	font-family: "Lato", sans-serif;
+}
+
+
+/* Google Calendar embeds: https://cornerstonecc.org.au/calendar/
+   Embed twice - a month view and an agenda view. Make responsive by showing
+   one or the other depending on viewport width. */
+
+/* Mobile (default) */
+.google-calendar-wrapper__agenda-view {
+    display: block;
+}
+.google-calendar-wrapper__month-view {
+    display: none;
+}
+
+/* Desktop */
+@media (min-width: 700px) {
+    .google-calendar-wrapper__agenda-view {
+        display: none;
+    }
+    .google-calendar-wrapper__month-view {
+        display: block;
+    }
 }
