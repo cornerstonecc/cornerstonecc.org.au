@@ -18,6 +18,13 @@
     --site-header-height: 0px;  /* Sensible default. Overridden on page load */
 }
 
+html {
+    /* Custom CSS var required for Safari by smoothscroll-anchor-polyfill.js
+       https://github.com/jonaskuske/smoothscroll-anchor-polyfill */
+    --scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
+
 
 /* ================================
    HOMEPAGE
