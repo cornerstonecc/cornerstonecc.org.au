@@ -183,9 +183,11 @@ html {
 }
 
 /* Make social icon colours more robust */
-.footer-widgets .jetpack_widget_social_icons svg {
+.footer-widgets .jetpack_widget_social_icons svg,
+.footer-widgets .jetpack_widget_social_icons svg path {  /* Yet more specificity... */
     fill: var(--wp--preset--color--accent);
 }
+
 
 /* ================================
    GENERAL LAYOUT
