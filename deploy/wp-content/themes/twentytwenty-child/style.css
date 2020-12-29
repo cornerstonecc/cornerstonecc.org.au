@@ -240,3 +240,21 @@ html {
         display: block;
     }
 }
+
+
+/* ================================
+   BUG FIXES
+   ================================ */
+
+/* iOS Safari doesn't support `background-size: cover` and
+ * `background-attachment: fixed`
+ *
+ * Convert to `background-attachment: scroll` for these browsers
+ *
+ * https://github.com/WordPress/gutenberg/issues/17718
+ */
+@supports (-webkit-touch-callout: inherit) {
+    .bg-attachment-fixed {
+        background-attachment: scroll;
+    }
+}
