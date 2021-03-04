@@ -182,10 +182,15 @@ html {
 	margin-bottom: 2rem;
 }
 
-/* Make social icon colours more robust */
-.footer-widgets .jetpack_widget_social_icons svg,
-.footer-widgets .jetpack_widget_social_icons svg path {  /* Yet more specificity... */
-    fill: var(--wp--preset--color--accent);
+/* Social icons use <svg><use> which creates a Shadow DOM that is difficult to
+   style, particularly since (in Chrome at least) it's created as a `closed`
+   Shadow DOM.
+
+   This rule styles the <symbol>s the <use> tag targets instead. (This <svg>
+   element can be found at the bottom of the <body>.)
+ */
+svg defs symbol[id^=icon-] {
+    fill: var(--footer-social-icon-color, #888);
 }
 
 
